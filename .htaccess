@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+RewriteRule ^([a-zA-Z0-9_-]+)\.aspx$ index.php?page=$1 [L]
+RewriteRule ^signup\.html$ control/post_signup.php?page=$1 [L]
+RewriteRule ^signin\.html$ control/post_signin.php?page=$1 [L]
+RewriteRule ^proses\.html$ control/proses.php?page=$1 [L]
+RewriteRule ^logout\.html$ control/logout.php?page=$1 [L]
+RewriteRule ^activation\.html$ control/post_activation.php?page=$1 [L]
+RewriteRule ^cart\.html$ control/cart.php?page=$1 [L]
+RewriteRule ^cekongkir\.html$ control/cekongkir.php?page=$1 [L]
+RewriteRule ^buat-toko\.html$ control/buat-toko.php?page=$1 [L]
+RewriteRule ^tambah-produk\.html$ control/tambah-produk.php?page=$1 [L]
+RewriteRule ^tambah-deskripsi\.html$ control/tambah-deskripsi.php?page=$1 [L]
+RewriteRule ^keranjang\.html$ control/keranjang.php?page=$1 [L]
+RewriteRule ^penagihan\.html$ control/penagihan.php?page=$1 [L]
+RewriteRule ^cartaction\.html$ control/cartaction.php?page=$1 [L]
+Options All -Indexes
+
+</IfModule>
