@@ -16,8 +16,8 @@ if (  !empty ( $nama_produk && $gambar && $id_kategori && $harga && $kondisi && 
 
   mysqli_query($con," insert into produk (id_toko, email,nama_produk,gambar,id_kategori_produk,harga,kondisi,berat, deskripsi) values ('$id_toko','$_SESSION[user_session]','$nama_produk','$gambar','$id_kategori','$harga','$kondisi','$berat','$deskripsi') ");
 
-  echo "<script type='text/javascript'> window.location.href = './?page=profile&act=daftar-produk' </script>";
-  // echo "insert into produk (nama_produk,gambar,id_kategori,harga,kondisi,berat, deskripsi) values ('$nama_produk','$gambar','$id_kategori','$harga','$kondisi','$berat','$deskripsi')";
+  // echo "<script type='text/javascript'> window.location.href = './?page=profile&act=daftar-produk' </script>";
+  echo "insert into produk (id_toko, email,nama_produk,gambar,id_kategori_produk,harga,kondisi,berat, deskripsi) values ('$id_toko','$_SESSION[user_session]','$nama_produk','$gambar','$id_kategori','$harga','$kondisi','$berat','$deskripsi')";
 ?>
 
 <script type="text/javascript">
@@ -25,6 +25,7 @@ if (  !empty ( $nama_produk && $gambar && $id_kategori && $harga && $kondisi && 
 </script>
 
 <?php
+  // echo "<script type='text/javascript'> window.location.href = './?page=profile&act=daftar-produk' </script>";
 }else {
 
   ?>
