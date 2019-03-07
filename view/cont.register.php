@@ -79,6 +79,7 @@
 
 												</form>
 										</div>
+											<p> sudah punya akun <a href="login.aspx"> Login sekarang!!</a> </p>
 								</div>
 						</div>
 				</div>

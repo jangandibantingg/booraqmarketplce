@@ -21,13 +21,16 @@
 					<div class="form-group form-inline m-b-10 ">
 
 						<div class="form-check">
-						
+
 						</div>
 					</div><div class="form-group">
 						<button class="btn btn-primary" id="submit">Login</button>
 
 					</div>
 				</form>
+
+				<label id="info"></label>
+				<label> belum punya akun <a href="register.aspx"> register sekarang!!</a> </label>
 			</div>
 	</div>
 </div>

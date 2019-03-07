@@ -1,15 +1,8 @@
 <?php
 session_start();
 include 'connect.php';
-include 'fungsi_thumb.php';
 error_reporting(0);
-
-
-$lokasi_file    = $_FILES['no_ktp']['tmp_name'];
-$tipe_file      = $_FILES['no_ktp']['type'];
-$nama_file      = $_FILES['no_ktp']['name'];
-
-
+var_dump($_POST);
 $nama_toko=$_POST['nama_toko'];
 $city_id=$_POST['city_id'];
 $alamat=$_POST['alamat'];
@@ -38,11 +31,9 @@ $numb=mysqli_num_rows($c);
 $numbnama=mysqli_query($con, "select * from toko where nama_toko='$nama_toko'");
 $numburl=mysqli_query($con, "select * from toko where url='$nama_toko'");
 if ( $numb > 0 ) {
-   echo "<script>$('.info').notify('anda sudah membuat toko', 'warn');</script>";
-
+   echo "anda sudah membuat toko";
 }elseif (mysqli_num_rows($numbnama) > 0) {
   ?>
-  
   <script type="text/javascript">
     $('.info').notify("nama toko tidak tersedia coba ganti yang lain", "warn");
   </script>
@@ -72,9 +63,9 @@ if ( $numb > 0 ) {
 }else {
   ?>
 <script type="text/javascript">
-  $('.info').notify("data belum lengkap  ", "warn");
+  $('.info').notify("data belum lengkap ", "warn");
 </script>
-
+<!-- <?php echo "$nama_toko && $city_id && $alamat && $email && $no_ktp && $no_npwp && $url" ?> -->
 <?php
 }
  ?>

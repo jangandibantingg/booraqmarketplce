@@ -2,6 +2,10 @@
 if ($member['level'] == 1) {
   echo "<script type='text/javascript'> window.location.href = './admin.aspx' </script>";
 }
+if (empty($_SESSION['user_session'])) {
+  echo "<script type='text/javascript'> window.location.href = './login.aspx' </script>";
+
+}
  ?>
 
 
@@ -14,19 +18,20 @@ if ($member['level'] == 1) {
          <div class="profile-setting card">
              <div class="card-header">
                  <ul class="nav card-header-tabs">
-                     <li class="nav-item"> <a class="nav-link " href="profile.aspx">Profile Saya</a></li>
-                     <li class="nav-item"> <a class="nav-link " href="?page=profile&act=alamat-pengiriman"> alamat pengiriman</a> </li>
+                     <li class="nav-item"> <a class="nav-link " href="profile.aspx"> <i class='icon-user'></i> Profile Saya</a></li>
+                     <li class="nav-item"> <a class="nav-link " href="?page=profile&act=alamat-pengiriman"> <i class='mdi mdi-home'></i> alamat pengiriman</a> </li>
                      <?php
                      $c=mysqli_query($con, "select * from toko where email='$_SESSION[user_session]'");
                      $numb=mysqli_num_rows($c);
                      if ($numb > 0) {
+                       echo "<li class='nav-item'><a href='./seller/' target='_blank'> <i class='mdi mdi-store'></i> backoffice seller </a></li>";
 
-                       echo "<li class='nav-item'><a href='./?page=profile&act=daftar-produk'> <i class='mdi mdi-store'></i> daftar produk</a></li>";
-                       echo "<li class='nav-item'><a href='./?page=profile&act=tambah-produk'> <i class='mdi mdi-store'></i> tambah produk</a></li>";
-                       echo "<li class='nav-item'><a href='./?page=profile&act=diskusi-produk'> <i class='mdi mdi-store'></i> diskusi produk</a></li>";
-                       echo "<li class='nav-item'><a href='./?page=profile&act=review-produk'> <i class='mdi mdi-store'></i> review produk</a></li>";
+                       // echo "<li class='nav-item'><a href='./?page=profile&act=daftar-produk'> <i class='mdi mdi-store'></i> daftar produk</a></li>";
+                       // echo "<li class='nav-item'><a href='./?page=profile&act=tambah-produk'> <i class='mdi mdi-store'></i> tambah produk</a></li>";
+                       // echo "<li class='nav-item'><a href='./?page=profile&act=diskusi-produk'> <i class='mdi mdi-store'></i> diskusi produk</a></li>";
+                       // echo "<li class='nav-item'><a href='./?page=profile&act=review-produk'> <i class='mdi mdi-store'></i> review produk</a></li>";
                      }else {
-                       echo "<li class='nav-item'><a href='./?page=profile&act=edit-toko'> <i class='mdi mdi-store'></i> Buat Toko</a></li>";
+                       echo "<li class='nav-item'><a href='./jadi-mitra.aspx'> <i class='mdi mdi-store'></i> Jadi Mitra</a></li>";
                      }
                      echo '
                           <li> <hr> </li>
@@ -44,6 +49,7 @@ if ($member['level'] == 1) {
                              <img id="img-profile" class="imgprofile"
                                   src="https://ecs7.tokopedia.net/img/cache/300/user-1/2019/2/15/967610/967610_c81e5db5-f941-4df1-9606-daadedd70fc6.jpg"
                              >
+
                              <div class="btn btn-grey btn-block mt-5">Pilih Foto</div>
                              <div class="mt-5">
                                  <small class="text-muted">

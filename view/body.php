@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="library/assets/css/icons.css">
     <link rel="stylesheet" href="library/assets/css/app.css">
 
+    <!--css dan js hanya untuk halaamn daftar personal dan terdaftar-->
+    <link rel="stylesheet" href="library/assets/vendors/steps/jquery.steps.css">
+    <link rel="stylesheet" href="library/assets/vendors/dropify/dropify.min.css">
+
 </head>
 <body>
 <div class="wrapper">
@@ -40,7 +44,30 @@ include "library/partials/modal_login.php";
 <script type="text/javascript" src="ajax/signup.js"></script>
 <script type="text/javascript" src="ajax/notify.min.js"></script>
 <script type="text/javascript" src="ajax/cart.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 
+
+
+<script src="library/assets/vendors/steps/jquery.steps.js"></script>
+<script src="library/assets/vendors/dropify/dropify.min.js"></script>
+
+ <script>
+     $(document).ready(function () {
+         // Basic
+         $('.dropify').dropify();
+     });
+     $(".tab-wizard").steps({
+         headerTag: "h6",
+         bodyTag: "section",
+         transitionEffect: "fade",
+         titleTemplate: '<span class="step">#index#</span> #title#',
+         labels: {
+             finish: "DAFTAR MITRA"
+         },
+         onFinished: function (event, currentIndex) {
+             swal("Form Submitted!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+         }
+     });
+ </script>
 </body>
 </html>
