@@ -76,9 +76,9 @@
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                        <span class="avatar" ><img src="../assets/images/profile/profile.png" alt="user"></span>
+                        <span class="avatar" ><img src="https://img.icons8.com/material/48/000000/administrator-male.png"></span>
                         <span class="ml-2 d-none d-lg-block">
-                             <span>Juragan Store</span>
+                             <span><?php echo "".$_SESSION['user_session'].""; ?></span>
 
                     </span>
                     </a>
@@ -128,24 +128,24 @@
             <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                     <li class="nav-item">
-                        <a href="./dashboard.php" class="nav-link active"><i class="mdi mdi-home"></i> Dashboard</a>
+                        <a href="./?page=dashboard" class="nav-link active"><i class="mdi mdi-home"></i> Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="product.php" class="nav-link"><i class="mdi mdi-tshirt-crew"></i> Produk</a>
+                        <a href="./?page=produk" class="nav-link"><i class="mdi mdi-tshirt-crew"></i> Produk</a>
 
                     </li>
                     <li class="nav-item">
-                        <a href="order.php" class="nav-link"><i class="mdi mdi-cart"></i> Penjualan</a>
+                        <a href="./?page=penjualan" class="nav-link"><i class="mdi mdi-cart"></i> Penjualan</a>
                     </li>
                     <li class="nav-item">
-                        <a href="chat.php" class="nav-link"><i class="mdi mdi-forum"></i> Chat Pelanggan</a>
+                        <a href="./?page=chat" class="nav-link"><i class="mdi mdi-forum"></i> Chat Pelanggan</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="payment.php" class="nav-link"><i class="mdi mdi-cash"></i> Pembayaran</a>
+                        <a href="./?page=pembayaran" class="nav-link"><i class="mdi mdi-cash"></i> Pembayaran</a>
 
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="toko.php" class="nav-link" ><i
+                        <a href="./?page=kelola-toko" class="nav-link" ><i
                                 class="mdi mdi-store"></i> Toko Saya</a>
                     </li>
 

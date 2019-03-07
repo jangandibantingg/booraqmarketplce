@@ -88,7 +88,7 @@ $idmenu=$r['id_produk'];
                          </ul>
                      </div> -->
 
-                     <input type="hidden" name="hidden_name" id="name<?php echo $idmenu; ?>" value="<?php echo $name; ?>" />
+                     <input type="hidden" name="hidden_name" id="name<?php echo $idmenu; ?>" value="<?php echo $r['nama_produk']; ?>" />
                      <input type="hidden" name="hidden_id_menu" id="id_menu<?php echo $idmenu; ?>" value="<?php echo $r["id_produk"]; ?>" />
                      <input type="hidden" name="hidden_price" id="price<?php echo $idmenu; ?>" value="<?php echo $r["harga"]; ?>" />
 

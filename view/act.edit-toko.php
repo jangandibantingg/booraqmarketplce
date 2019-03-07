@@ -1,8 +1,6 @@
 <?php
-
-
 if ($numb > 0) {
-echo "<script type='text/javascript'> window.location.href = './?page=profile&act=kelola-toko' </script>";
+echo "<script type='text/javascript'> window.location.href = './seller/' </script>";
 }else{
   if(empty($_GET['hal'])){
 

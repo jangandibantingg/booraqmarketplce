@@ -4,7 +4,7 @@
 
      <div class="container text-center">
 
-         <img src="library/assets/images/vector/comingsoon.png" alt="" class="w-50">
+         <img src="http://dev.booraq.id/library/assets/images/vector/comingsoon.png" alt="" class="w-50">
 
          <div class="mt-30">
              <p>Halaman ini masih dalam pengembagan, mohon bersabar</p>

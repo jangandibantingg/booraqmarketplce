@@ -101,10 +101,8 @@
                                     $numb=mysqli_num_rows($c);
                                     if ($numb > 0) {
                                       echo " <li> <hr> <small>kelola toko</small> </li>";
-                                      echo "<li><a href='./?page=profile&act=daftar-produk'> <i class='mdi mdi-store'></i> daftar produk</a></li>";
-                                      echo "<li><a href='./?page=profile&act=tambah-produk'> <i class='mdi mdi-store'></i> tambah produk</a></li>";
-                                      echo "<li><a href='./?page=profile&act=diskusi-produk'> <i class='mdi mdi-store'></i> diskusi produk</a></li>";
-                                      echo "<li><a href='./?page=profile&act=review-produk'> <i class='mdi mdi-store'></i> review produk</a></li>";
+                                      echo "<li><a href='./seller/'> <i class='mdi mdi-store'></i> Backoffice Seller</a></li>";
+
                                     }else {
                                       echo "<li><a href='./?page=profile&act=edit-toko'> <i class='mdi mdi-store'></i> Buat Toko</a></li>";
                                     }
@@ -159,7 +157,7 @@
                                 <li><a href="market-place.aspx" title="">MARKET PLACE</a></li>
                                 <li><a href="article.aspx" title="">ARTIKEL</a></li>
                                 <!-- <li><a href="blog.php" title="">HASANA ISLAM</a></li> -->
-                                <li><a href="ifo-sholat.aspx" title="">INFO SHOLAT</a></li>
+                                <li><a href="info-sholat.aspx" title="">INFO SHOLAT</a></li>
                             </ul><!-- /.menu -->
                         </div><!-- /.mainnav -->
                     </div><!-- /.nav-wrap -->

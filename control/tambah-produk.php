@@ -54,7 +54,7 @@ if (($tipe_file =="image/jpeg" OR
 
 }
 
-echo "<script>window.alert('tambah deskripsi');window.location=('./?page=profile&act=tambah-deskripsi')</script>";
+echo "<script>window.alert('tambah deskripsi');window.location=('./seller/?page=tambah-deskripsi')</script>";
 
 
 
