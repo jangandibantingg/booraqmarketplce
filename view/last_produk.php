@@ -21,9 +21,9 @@
                 <article class="product">
                     <div class="product-image">
                         <a class="product-thumb" href="./?page=produk&id=<?php echo "$r[id_produk]"; ?>">
-                            <img class="product-frontimage" src="library/foto_produk/<?php echo "$r[gambar]"; ?>"
+                            <img class="product-frontimage" src="library/foto_produk/small_<?php echo "$r[gambar]"; ?>"
                                  alt="product image">
-                            <img class="product-backimage" src="library/foto_produk/<?php echo "$r[gambar]"; ?>"
+                            <img class="product-backimage" src="library/foto_produk/small_<?php echo "$r[gambar]"; ?>"
                                  alt="product image">
                         </a>
                         <ul class="product-actionbox">

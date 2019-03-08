@@ -30,16 +30,16 @@
                         <!-- Single Blog -->
                         <article class="blogitem">
                             <div class="blogitem-thumb">
-                                <a href="blog-detail.html">
+                                <a href="./?page=article&hal=<?php echo "$r[judul_seo]"; ?>">
                                     <img src="library/assets/images/blog/blog1.jpg" alt="blog item image">
                                 </a>
                             </div>
                             <div class="blogitem-content">
-                                <h4 class="blogitem-title"><a href="blog-detail.html"><?php echo "$r[judul]"; ?></a></h4>
+                                <h4 class="blogitem-title"><a href="./?page=article&hal=<?php echo "$r[judul_seo]"; ?>"><?php echo "$r[judul]"; ?></a></h4>
                                 <div class="blogitem-meta">
                                           <span class="blogitem-date"><i
-                                                  class="ion ion-md-calendar"></i> July 11, 2018</span>
-                                    <span class="blogitem-author"><a href="blog.html"><i
+                                                  class="ion ion-md-calendar"></i><?php echo "".tanggal_indo($r['date']).""; ?></span>
+                                    <span class="blogitem-author"><a href=""><i
                                                 class="ion ion-md-person"></i>By Admin</a></span>
                                 </div>
                             </div>

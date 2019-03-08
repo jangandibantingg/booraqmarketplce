@@ -8,7 +8,7 @@
 
                 <!-- Cart Products -->
                 <div class="cart-table table-responsive">
-                  <div class="table-striped table-responsive" id="order_table">
+                  <div class="table-responsive" id="order_table">
                          <table class="table table-bordered">
                               <tr>
                                    <th width="40%">Product Name</th>
@@ -49,7 +49,6 @@
 
                                         <form method="post" action="cartaction.html">
                                              <input type="submit" name="place_order" class="btn btn-warning" value="Place Order" />
-
                                         </form>
                                    </td>
                               </tr>

@@ -124,7 +124,7 @@
                             <ul class="menu-compare-wishlist">
 
                                 <li class="wishlist">
-                                    <a href="wishlist.php" title="">
+                                    <a href="wishlist.aspx" title="">
                                         <img src="library/assets/images/icons/wishlist.png" alt="">
                                     </a>
                                 </li>
@@ -154,9 +154,9 @@
                             <ul class="menu">
                                 <li><a href="beranda.aspx" title="">BERANDA</a></li>
                                 <li><a href="tentang-kami.aspx" title="">TENTANG KAMI</a></li>
-                                <li><a href="market-place.aspx" title="">MARKET PLACE</a></li>
+                                <li><a href="market-place.aspx" title="">Mitra UMKM</a></li>
                                 <li><a href="article.aspx" title="">ARTIKEL</a></li>
-                                <!-- <li><a href="blog.php" title="">HASANA ISLAM</a></li> -->
+                                <!-- <li><a href="blogW" title="">HASANA ISLAM</a></li> -->
                                 <li><a href="info-sholat.aspx" title="">INFO SHOLAT</a></li>
                             </ul><!-- /.menu -->
                         </div><!-- /.mainnav -->

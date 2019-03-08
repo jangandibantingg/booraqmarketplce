@@ -21,11 +21,11 @@ $weight=$_POST['weight'];
 $subtotalharga=$_POST['subtotalharga'];
 
 // $a=mysqli_query($con, "select * from order_produk where id_produk='$id_produk' and session_id='$session_id'  ");
-$url="http://booraq.codercoffee.id/cost.php?destination=".$destination."&origin=".$origin."&weight=". $weight*100 ."&courier=$service";
+$url="http://booraq.codercoffee.id/cost.php?destination=".$destination."&origin=".$origin."&weight=". $weight ."&courier=$service";
 $fileget=file_get_contents($url);
 $code=json_decode($fileget,true);
 
-$ongkir ="".$code['rajaongkir']['results'][0]['costs'][0]['cost'][0]['code']."";
+$ongkir ="".$code['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value']."";
 $total=$ongkir+$subtotalharga;
 $orderid=rand(0,100);
  ?>
@@ -33,7 +33,7 @@ $orderid=rand(0,100);
 
 <div class="table-responsive">
   <h4>Order Total</h4>
-  <p><?php echo "$url"; ?></p>
+  <!-- <p><?php echo "$url"; ?></p> -->
 
 
 
@@ -124,7 +124,9 @@ $orderid=rand(0,100);
                   },
                   // Optional
                   onPending: function(result){
-                    /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                    /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSO
+
+                    N.stringify(result, null, 2);
                   },
                   // Optional
                   onError: function(result){

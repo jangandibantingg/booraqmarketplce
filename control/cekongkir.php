@@ -23,7 +23,7 @@ if (empty($service)) {
 
   ';
 }else{
-$url="http://booraq.codercoffee.id/cost.php?destination=".$destination."&origin=".$origin."&weight=". $weight ."&courier=$service";
+$url="http://booraq.codercoffee.id/cost.php?destination=".$destination."&origin=".$origin."&weight=".$weight."&courier=$service";
 $fileget=file_get_contents($url);
 $code=json_decode($fileget,true);
 
@@ -38,7 +38,7 @@ if ($ongkir > 0) {
 
 
   ';
-  
+
 }
 }
  ?>

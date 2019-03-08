@@ -140,7 +140,7 @@ $idmenu=$r['id_produk'];
                      </div>
                      <h5 class="mt-10">Estimasi ongkos kirim</h5>
                      <?php
-                     $berat=$r['berat']*1000;
+                     $berat=$r['berat'];
 
                       ?>
                     <form  id="loginform" action="cekongkir.html" method="post">

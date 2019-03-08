@@ -1,3 +1,10 @@
+<?php
+
+  if ($_GET['dell']) {
+    mysqli_query($con, "delete from order_produk where id_order='$_GET[dell]'");
+
+  }
+ ?>
 <main class="page-content">
 
         <!-- Spping Cart Area -->
@@ -5,27 +12,26 @@
             <div class="container">
 
                 <!-- Cart Products -->
-                <div class="cart-table table-responsive">
-                    <table class="table table-hover">
 
-				 							<thead>
-				 								<tr>
+                  <?php
+                  $session_id=session_id();
+                  $ko=mysqli_query($con, "SELECT * from order_produk,produk,toko where toko.id_toko=produk.id_toko and produk.id_produk=order_produk.id_produk and order_produk.email='$_SESSION[user_session]' GROUP by toko.id_toko ");
+                  while ($store=mysqli_fetch_array($ko)) {
+                   ?>
+                   <h5> <small>Penjual :</small> <i class="mdi mdi-store"></i> <?php echo "$store[nama_toko]"; ?> </h5>
+                   <?php
 
-				 									<th class="cart-product-thumbnail">produk</th>
-													<th class="cart-product-name">jumlah</th>
-				 									<th class="cart-product-name">harga</th>
+                    ?>
+                    <div class="cart-table table-responsive">
+                    <table class="table table-responsive">
 
 
-				 									<th class="cart-product-subtotal">Total</th>
-				 								</tr>
-				 							</thead>
 				 							<tbody>
 												<?php
-												$session_id=session_id();
+                        $produk=mysqli_query($con, "select * from order_produk,produk,toko where toko.id_toko=produk.id_toko and produk.id_produk=order_produk.id_produk and order_produk.email='$_SESSION[user_session]' and produk.id_toko='$store[id_toko]' ");
+                        // echo "select * from order_produk,produk,toko where toko.id_toko=produk.id_toko and produk.id_produk=order_produk.id_produk and order_produk.email='$_SESSION[user_session]' and order_produk.id_toko='$store[id_toko]' ";
+                          while ($r=mysqli_fetch_array($produk)) {
 
-												$ko=mysqli_query($con, "select * from order_produk,produk where produk.id_produk=order_produk.id_produk and order_produk.email='$_SESSION[user_session]' ");
-
-												while ($r=mysqli_fetch_array($ko)) {
 												$lt=mysqli_fetch_array(mysqli_query($con, "select * from city where city_id='$r[origin]'" ));
 												$k=mysqli_fetch_array(mysqli_query($con, "select * from city where city_id='$member[id_kota]'" ));
 												$totalharga=$r['harga']*$r['qty'];
@@ -35,37 +41,37 @@
 				 								<tr>
 
 
-
+                                        <td> <a href="./?page=penagihan&dell=<?php echo "$r[id_order]"; ?>"> <i class="mdi mdi-delete text-danger"></i> </td>
 																				<td class="cart-product-thumbnail">
+
 																					<a href="#">
 																						<img src="library/foto_produk/small_<?php echo "$r[gambar]";?>" alt="<?php echo "$r[nama_produk]"; ?>" height="50px">
 																					</a>
-																					<div class="cart-product-thumbnail-name"><?php echo "$r[nama_produk]"; ?></div>
+
 																				</td>
-													<td class="cart-product-subtotal">
-														<span class="amount"><?php echo "$r[qty]"; ?></span>
+                                        <td align="left" ><p align="left">
+                                          <?php echo "$r[nama_produk]"; ?><br>
+                                            <span class="text-danger" >Harga : <?php echo "".number_format($r['harga']).""; ?></span><br>
+                                          <small>jumlah : <?php echo "$r[qty]"; ?></small><br>
 
+                                            <span class="amount">Total :<?php echo "".number_format($totalharga).""; ?></span><br>
+                                        </td>
 
-																		 									<td class="cart-product-subtotal">
-																		 										<span class="amount"><?php echo "".number_format($r['harga']).""; ?></span>
-																		 									</td>
+                                        </p>
 
-
-
-
-				 									<td class="cart-product-subtotal">
-				 										<span class="amount"><?php echo "".number_format($totalharga).""; ?></span>
-				 									</td>
 				 								</tr>
-												<?php
-												$subtotalharga=$subtotalharga+$totalharga;
-												$origin=$r['origin'];
-											}
-												 ?>
+                      <?php
+                       $subtotalharga=$subtotalharga+$totalharga;
+                      }
 
+                    ?>
 				 							</tbody>
 				 						</table>
 										   </div>
+                       <?php
+
+                    }
+                        ?>
 
 											 <div class="cart-table table-responsive">
 <hr>

@@ -15,7 +15,7 @@
     <?php include 'view/banner.php'; ?>
 
 
-    <?php include 'view/last_produk.php';; ?>
+    <?php include 'view/tranding_produk.php';; ?>
 
 
     <?php

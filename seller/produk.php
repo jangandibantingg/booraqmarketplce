@@ -61,7 +61,7 @@ if ($_GET['dell']) {
                             </thead>
                             <tbody>
                               <?php
-                              $a=mysqli_query($con, "select * from produk order by id_produk asc limit 8 ");
+                              $a=mysqli_query($con, "select * from produk where email='$_SESSION[user_session]' order by id_produk desc");
                               while ($r=mysqli_fetch_array($a)) {
                               $k=mysqli_fetch_array(mysqli_query($con, "select * from Kategori where id_kategori='$r[id_kategori_produk]'"));
 
